@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Application</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        window.onload = function() {
+            // Add click event for settings button
+            const settingsButton = document.querySelector('#settings');
+            settingsButton.addEventListener('click', function() {
+                window.location.href = 'settings.html'; // Navigate to settings.html
+            });
+
+            const themeButton = document.querySelector('#theme-toggle');
+            updateButton(themeButton);
+
+            themeButton.addEventListener('click', function() {
+                document.documentElement.classList.toggle('dark');
+                updateButton(themeButton);
+            });
+        };
+
+        function updateButton(button) {
+            if (document.documentElement.classList.contains('dark')) {
+                button.classList.remove('bg-blue-500');
+                button.classList.add('bg-yellow-500');
+                button.textContent = 'Light Theme';
+            } else {
+                button.classList.remove('bg-yellow-500');
+                button.classList.add('bg-blue-500');
+                button.textContent = 'Dark Theme';
+            }
+        }
+    </script>
+    <style>
+        body {
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .dark body {
+            background-color: #2d3748; /* Dark background */
+            color: #f7fafc; /* Light text color */
+        }
+        .light body {
+            background-color: #f7fafc; /* Light background */
+            color: #2d3748; /* Dark text color */
+        }
+
+        /* Custom styles for the sections */
+        .dark .section-bg {
+            background-color: #1e40af; /* Blue color for dark theme */
+            color: #ffffff; /* White text for dark theme */
+        }
+        .light .section-bg {
+            background-color: #10b981; /* Green color for light theme */
+            color: #ffffff; /* White text for light theme */
+        }
+
+        /* Ensure proper height for sections */
+        .section-bg {
+            min-height: 300px; /* Adjust the minimum height as needed */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 1rem;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 34px;
+            height: 20px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 14px;
+            width: 14px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(14px);
+        }
+
+        /* Styles for the Auto/Manual button */
+        .auto-manual-btn {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        
+    </style>
+</head>
+<body class="light flex items-center justify-center h-screen">
+    
+     <!-- Settings button in the top-left corner -->
+    <div class="absolute top-4 left-4">
+        <button id="settings" class="bg-gray-500 text-white px-4 py-2 rounded-lg shadow-md">
+            Settings
+        </button>
+    </div>
+
+    <div class="absolute top-4 right-4">
+        <button id="theme-toggle" onclick="toggleTheme(this)" class="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md">
+            Dark Theme
+        </button>
+    </div>
+
+    <div class="text-center">
+        <h1 class="text-2xl font-bold mb-8">Test Application</h1>
+        <div class="flex space-x-8">
+            <!-- Controls Section -->
+            <div id="controls-section" class="section-bg border border-gray-400 rounded-lg shadow-md">
+                <h2 class="text-lg font-semibold mb-4">Controls</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+                    <!-- Switches in grid layout -->
+                    <div class="flex items-center justify-center">
+                        <span class="text-xl mr-4">1</span>
+                        <label class="switch">
+                            <input type="checkbox" id="switch1">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <span class="text-xl mr-4">2</span>
+                        <label class="switch">
+                            <input type="checkbox" id="switch2">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <span class="text-xl mr-4">3</span>
+                        <label class="switch">
+                            <input type="checkbox" id="switch3">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <span class="text-xl mr-4">4</span>
+                        <label class="switch">
+                            <input type="checkbox" id="switch4">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <span class="text-xl mr-4">5</span>
+                        <label class="switch">
+                            <input type="checkbox" id="switch5">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <span class="text-xl mr-4">6</span>
+                        <label class="switch">
+                            <input type="checkbox" id="switch6">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <span class="text-xl mr-4">7</span>
+                        <label class="switch">
+                            <input type="checkbox" id="switch7">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <span class="text-xl mr-4">8</span>
+                        <label class="switch">
+                            <input type="checkbox" id="switch8">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <p>Switch Values</p>
+            </div>
+            <!-- Readings Section -->
+            <div id="readings-section" class="section-bg border border-gray-400 rounded-lg shadow-md">
+                <h2 class="text-lg font-semibold mb-4">Readings</h2>
+                <p class="text-xl mb-4">Pleasure: <span id="pleasure-value">Loading...</span></p>
+                <p>Sensor Values</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+        <button onclick="toggleMode(this)" class="auto-manual-btn bg-green-500 text-white px-4 py-2 rounded-lg shadow-md">
+            Auto
+        </button>
+    </div>
+
+    <script src="auto.js"></script>
+    <script src="renderer.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,34 @@
+{
+  "name": "electron-serialport",
+  "version": "1.0.2",
+  "description": "A minimal Electron application with node serialport",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:serialport/electron-serialport.git"
+  },
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^26.4.0"
+  },
+  "dependencies": {
+    "mqtt": "^5.10.1",
+    "serialport": "^10.3.0",
+    "tableify": "^1.1.1"
+  },
+  "engines": {
+    "node": "18.16.1",
+    "npm": "9.5.1"
+  }
+}

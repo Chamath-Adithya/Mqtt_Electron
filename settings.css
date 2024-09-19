@@ -1,0 +1,53 @@
+/* Base theme transition */
+body {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark mode settings */
+.dark {
+    background-color: #2d3748;
+    color: #f7fafc;
+}
+
+/* Light mode settings */
+.light {
+    background-color: #f7fafc;
+    color: #2d3748;
+}
+
+/* Dark mode form background */
+.dark .bg-white {
+    background-color: #1f2937 !important; /* Dark mode background for form */
+}
+
+/* Input styling for dark mode */
+.dark input {
+    background-color: #374151;
+    color: #f7fafc;
+}
+
+/* Label color for dark mode */
+.dark label {
+    color: #f7fafc;
+}
+
+/* Button styling for dark mode */
+.dark button {
+    background-color: #1d4ed8;
+}
+
+/* Change the icon color in dark mode */
+.dark .back-icon {
+    color: #f7fafc;
+}
+
+/* Hover effect for back button */
+.back-icon:hover {
+    color: #10b981;
+}
+
+/* Transition effect for the theme toggle button */
+#theme-toggle {
+    transition: background-color 0.3s ease;
+}
+

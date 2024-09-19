@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="settings.css"> <!-- Link the external CSS file -->
+    <script>
+        window.onload = function () {
+            // Get the current theme from localStorage or default to light
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.classList.add(currentTheme);
+
+            // Get the toggle button and set its initial state
+            const themeToggleButton = document.getElementById('theme-toggle');
+            updateThemeButton(themeToggleButton, currentTheme);
+
+            // Add event listener to toggle theme
+            themeToggleButton.addEventListener('click', function () {
+                const newTheme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+                document.documentElement.classList.toggle('dark');
+                document.documentElement.classList.toggle('light');
+                localStorage.setItem('theme', newTheme); // Store theme preference
+                updateThemeButton(themeToggleButton, newTheme);
+            });
+
+            // Add event listener to the back button to navigate to index.html
+            const backButton = document.getElementById('back-button');
+            backButton.addEventListener('click', function () {
+                window.location.href = 'index.html'; // Redirect to index.html
+            });
+        };
+
+        function updateThemeButton(button, theme) {
+            if (theme === 'dark') {
+                button.classList.remove('bg-blue-500');
+                button.classList.add('bg-yellow-500');
+                button.textContent = 'Light Theme';
+            } else {
+                button.classList.remove('bg-yellow-500');
+                button.classList.add('bg-blue-500');
+                button.textContent = 'Dark Theme';
+            }
+        }
+    </script>
+</head>
+<body class="light bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg w-96">
+        <!-- Header with back button and title -->
+        <div class="flex items-center mb-6">
+            <i id="back-button" class="fas fa-arrow-left text-2xl back-icon cursor-pointer"></i>
+            <h1 class="text-2xl font-semibold ml-4 dark:text-gray-300">Settings</h1>
+        </div>
+
+        <!-- Settings form -->
+        <form>
+            <!-- URL Field -->
+            <div class="mb-4">
+                <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="url">Url</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:bg-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline" id="url" type="text" placeholder="Url">
+            </div>
+
+            <!-- Port Field -->
+            <div class="mb-4">
+                <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="port">Port</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:bg-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline" id="port" type="text" placeholder="Port">
+            </div>
+
+            <!-- Username Field -->
+            <div class="mb-4">
+                <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="username">User Name</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:bg-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="User Name">
+            </div>
+
+            <!-- Password Field -->
+            <div class="mb-4">
+                <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="password">Password</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:bg-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Password">
+            </div>
+
+            <!-- Save Button -->
+            <div class="flex justify-center">
+                <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-all" type="button">
+                    Save
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Theme Toggle Button -->
+    <div class="absolute top-4 right-4">
+        <button id="theme-toggle" class="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md">
+            Dark Theme
+        </button>
+    </div>
+</body>
+</html>
+
