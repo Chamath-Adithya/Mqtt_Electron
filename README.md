@@ -1,27 +1,18 @@
-# electron-serialport
-An example of how to use serialport in an electron app
+- 👋 Hi, I’m Chamath Adithya (@Chamath5)
+- 👀 I’m interested in IoT solutions, automation, software development, UI/UX design, PCB design, and web technologies.
+- 🌱 I’m currently learning advanced React and Next.js, as well as cloud integration for IoT projects.
+- 💞️ I’m looking to collaborate on innovative projects involving IoT, automation, and web development.
+- 📫 Feel free to reach out to me at [achamath1@gmail.com](mailto:achamath1@gmail.com) if you’d like to know more about my projects.
+- 😄 Pronouns: He/Him
+- ⚡ Fun fact: I’m always experimenting with new tech stacks and love automating everyday tasks with smart solutions.
 
-**Clone and run for a quick way to see Electron and Serialport in action.**
-
-This is a minimal Electron application based on the [Quick Start Guide](http://electron.atom.io/docs/tutorial/quick-start) within the Electron documentation.
-
-**Use this app along with the [Electron API Demos](http://electron.atom.io/#get-started) app for API code examples to help you get started.**
-
+# electron-mqtt
+An example of how to use mqtt in an electron app
 A basic Electron application needs just these files:
-
-- `package.json` - Points to the app's main file and lists its details and dependencies.
-- `main.js` - Starts the app and creates a browser window to render HTML. This is the app's **main process**.
-- `index.html` - A web page to render. This is the app's **renderer process**.
-
-You can learn more about each of these components within the [Quick Start Guide](http://electron.atom.io/docs/tutorial/quick-start).
-
-## To Use
-
-To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
 ```bash
 # Clone this repository
-git clone https://github.com/serialport/electron-serialport.git
+git clone https://github.com/Mqtt_Electron/electron-serialport.git
 # Go into the repository
 cd electron-serialport
 # Install dependencies
@@ -30,13 +21,4 @@ npm install
 npm start
 ```
 
-Learn more about Electron and its API in the [documentation](http://electron.atom.io/docs/).
-
-## Other Example Apps
-
-For more example apps, see the
-[list of boilerplates](http://electron.atom.io/community/#boilerplates)
-created by the awesome electron community.
-
-#### License [CC0 1.0 (Public Domain)](LICENSE.md)
 # Mqtt_Electron
