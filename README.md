@@ -12,9 +12,9 @@ A basic Electron application needs just these files:
 
 ```bash
 # Clone this repository
-git clone https://github.com/Mqtt_Electron/electron-serialport.git
+git clone https://github.com/Chamath5/Mqtt_Electron.git
 # Go into the repository
-cd electron-serialport
+cd Mqtt_Electron
 # Install dependencies
 npm install
 # Run the app
