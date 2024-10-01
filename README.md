@@ -12,7 +12,7 @@ A basic Electron application needs just these files:
 
 ```bash
 # Clone this repository
-git clone https://github.com/Chamath5/Mqtt_Electron.git
+git clone https://github.com/Chamath-Adithya/Mqtt_Electron.git
 # Go into the repository
 cd Mqtt_Electron
 # Install dependencies
